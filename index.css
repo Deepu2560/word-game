@@ -110,3 +110,15 @@ hr {
 .check-btn {
   background-color: #5c45bf;
 }
+
+@media (max-width: 1080px) {
+  main {
+    top: 30%;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    width: 100%;
+  }
+}
