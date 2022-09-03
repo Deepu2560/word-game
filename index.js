@@ -39,7 +39,8 @@ var wordobtain = words[Math.floor(Math.random() * words.length)];
 
 let randomWordString = wordobtain.toUpperCase().split("");
 
-// show();
+show();
+console.clear();
 
 function shuffleArray(array) {
   for (var i = randomWordString.length - 1; i > 0; i--) {
@@ -53,6 +54,7 @@ function shuffleArray(array) {
 }
 
 function show() {
+  input.value = "";
   var jumbledWord = shuffleArray(randomWordString);
   word.innerText = jumbledWord.join(" ");
 
@@ -61,19 +63,18 @@ function show() {
   const countdown = setInterval(() => {
     if (second == 1) {
       clearInterval(countdown);
-      alert("Time Over. You lose");
+      alert(`Time Over. Word was ${wordobtain}`);
       document.location.reload();
     }
     second--;
     time.innerText = `TIME LEFT; ${second}`;
 
     submit.addEventListener("click", () => {
-      var text = input.value;
-      console.log(text);
-      if ((x = "")) {
+      var text = input.value.toUpperCase();
+      if (text == "") {
         alert("Please Enter Something");
-        countdown();
-      } else if (x == wordobtain) {
+      } else if (text == wordobtain.toUpperCase()) {
+        clearInterval(countdown);
         alert("You Found Correct Word. You won");
         document.location.reload();
       }
