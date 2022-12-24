@@ -67,7 +67,7 @@ function show() {
       document.location.reload();
     }
     second--;
-    time.innerText = `TIME LEFT; ${second}`;
+    time.innerText = `TIME LEFT: ${second}`;
 
     submit.addEventListener("click", () => {
       var text = input.value.toUpperCase();
